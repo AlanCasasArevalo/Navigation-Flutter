@@ -3,6 +3,7 @@ import 'package:faker/faker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:navigation/pages/login_page.dart';
+import 'package:navigation/routes.dart';
 
 void main() {
   runApp(
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       home: MenuPage(),
       routes: {
-        '/counter': (context) => Scaffold(
+        Routes.counter: (context) => Scaffold(
               body: Center(
                 child: Text('Counter'),
               ),
@@ -60,7 +61,7 @@ class MenuPage extends StatelessWidget {
         child: ListTile(
           title: Text("Go to Counter"),
           onTap: () {
-           Navigator.pushNamed(context, '/counter');
+           Navigator.pushNamed(context, Routes.counter);
           },
         ),
       ),
