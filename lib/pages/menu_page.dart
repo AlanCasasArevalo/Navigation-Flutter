@@ -9,6 +9,12 @@ class MenuPage extends StatelessWidget {
   void _onTap(BuildContext context) {
     final faker = Faker();
     final email = faker.internet.email();
+    Navigator.pushNamed(
+      context,
+      Routes.login,
+      arguments: email,
+    );
+    /*
     // Haciendo este cambio, se pasa el parametro email y aunque hagamos un hot reload no se cambia el email en la pantalla
     final route = MaterialPageRoute(
       builder: (_) {
@@ -17,6 +23,7 @@ class MenuPage extends StatelessWidget {
       },
     );
     Navigator.push(context, route);
+     */
   }
 
   @override
