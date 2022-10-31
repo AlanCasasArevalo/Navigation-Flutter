@@ -53,11 +53,21 @@ class MenuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListTile(
-          title: Text("Go to Counter"),
-          onTap: () {
-           Navigator.pushNamed(context, Routes.counter);
-          },
+        child: ListView(
+          children: [
+            ListTile(
+              title: Text("Go to Login"),
+              onTap: () {
+                _onTap(context);
+              },
+            ),
+            ListTile(
+              title: Text("Go to Counter"),
+              onTap: () {
+                Navigator.pushNamed(context, Routes.counter);
+              },
+            ),
+          ],
         ),
       ),
     );
