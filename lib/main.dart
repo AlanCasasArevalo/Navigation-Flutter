@@ -38,7 +38,8 @@ class MenuPage extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.add),
           onPressed: () {
-            Navigator.pop(context);
+            // En caso de no tener ninguna vista por encima de nuestra vista, si usamos el metodo maybePop no quedara la pantalla negra
+            Navigator.maybePop(context);
           },
         ),
       ),
