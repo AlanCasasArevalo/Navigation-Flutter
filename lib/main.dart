@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:navigation/app_routes.dart';
 import 'package:navigation/pages/login_page.dart';
 import 'package:navigation/routes.dart';
 
@@ -27,13 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MenuPage(),
-      routes: {
-        Routes.counter: (context) => Scaffold(
-              body: Center(
-                child: Text('Counter'),
-              ),
-            )
-      },
+      routes: appRoutes,
     );
   }
 }
