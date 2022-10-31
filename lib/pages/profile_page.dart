@@ -13,15 +13,17 @@ class ProfilePage extends StatelessWidget {
         //   icon: Icon(Icons.arrow_back),
         // ),
       ),
-      body: MaterialButton(
-        onPressed: () {
-          Navigator.popUntil(context, (route) {
-            final name = route.settings.name;
-            print("❌ ${route.settings.name}");
-            return name == "/";
-          });
-        },
-        child: Text("LOG OUT"),
+      body: Center(
+        child: MaterialButton(
+          onPressed: () {
+            Navigator.popUntil(context, (route) {
+              final name = route.settings.name;
+              print("❌ ${route.settings.name}");
+              return name == "/";
+            });
+          },
+          child: Text("LOG OUT"),
+        ),
       ),
     );
   }

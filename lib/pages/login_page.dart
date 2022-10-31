@@ -4,30 +4,33 @@ import 'package:navigation/pages/profile_page.dart';
 class LoginPage extends StatelessWidget {
   final String email;
 
-  const LoginPage({super.key, required this.email});
+  const LoginPage({Key? key, required this.email}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back),
-        ),
-      ),
-      body: Center(
-        child: MaterialButton(
-          onPressed: () {
-            final route = MaterialPageRoute(
-              builder: (_) => ProfilePage(),
-              settings: RouteSettings(name: '/profile')
-            );
-            Navigator.push(context, route);
-          },
-          child: Text("Login Page $email)"),
-        ),
+      appBar: AppBar(),
+      body: Column(
+        children: [
+          MaterialButton(
+            onPressed: () {
+              final route = MaterialPageRoute(
+                builder: (_) => ProfilePage(),
+              );
+              Navigator.push(context, route);
+            },
+            child: Text("Login Page $email)"),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (_, index) => Container(
+                height: 70,
+                color: Colors.primaries[index],
+              ),
+              itemCount: Colors.primaries.length,
+            ),
+          ),
+        ],
       ),
     );
   }

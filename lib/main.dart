@@ -31,26 +31,31 @@ class MyApp extends StatelessWidget {
 }
 
 class MenuPage extends StatelessWidget {
+  const MenuPage({super.key});
+
+  void _onTap(BuildContext context) {
+    final faker = Faker();
+    final email = faker.internet.email();
+    // Haciendo este cambio, se pasa el parametro email y aunque hagamos un hot reload no se cambia el email en la pantalla
+    final route = MaterialPageRoute(
+      builder: (_) {
+        print("🤦🏻‍♂️");
+        return LoginPage(email: email);
+      },
+    );
+    Navigator.push(context, route);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: ListView(
-        children: [
-          ListTile(
-            trailing: Icon(Icons.arrow_forward_ios),
-            title: Text("Go to Login"),
-            onTap: () {
-              final route = MaterialPageRoute(
-                builder: (_) => LoginPage(
-                  email: faker.internet.email(),
-                ),
-                settings: RouteSettings(name: "/login"),
-              );
-              Navigator.push(context, route);
-            },
-          ),
-        ],
+      body: SafeArea(
+        child: ListTile(
+          title: Text("Go to Login"),
+          onTap: () {
+            _onTap(context);
+          },
+        ),
       ),
     );
   }
