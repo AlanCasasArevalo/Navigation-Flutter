@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:navigation/pages/login_page.dart';
 
 void main() {
   runApp(
@@ -35,7 +36,16 @@ class MenuPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          
+          ListTile(
+            trailing: Icon(Icons.arrow_forward_ios),
+            title: Text("Go to Login"),
+            onTap: () {
+              final route = MaterialPageRoute(
+                builder: (_) => LoginPage()
+              );
+              Navigator.push(context, route);
+            },
+          ),
         ],
       ),
     );
