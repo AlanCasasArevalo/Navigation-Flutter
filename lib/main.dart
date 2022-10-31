@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:navigation/app_routes.dart';
 import 'pages/menu_page.dart';
+import 'routes.dart';
 
 void main() {
   runApp(
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       // Si usamos nombres de rutas y definimos correctamente home '/' no hace falta poner home en la app principal
       //home: MenuPage(),
       routes: appRoutes,
+      initialRoute: Routes.splash,
     );
   }
 }
