@@ -26,6 +26,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MenuPage(),
+      routes: {
+        '/counter': (context) => Scaffold(
+              body: Center(
+                child: Text('Counter'),
+              ),
+            )
+      },
     );
   }
 }
@@ -51,9 +58,9 @@ class MenuPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: ListTile(
-          title: Text("Go to Login"),
+          title: Text("Go to Counter"),
           onTap: () {
-            _onTap(context);
+           Navigator.pushNamed(context, '/counter');
           },
         ),
       ),
