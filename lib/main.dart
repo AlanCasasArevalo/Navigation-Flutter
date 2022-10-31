@@ -34,6 +34,14 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.add),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: ListView(
         children: [
           ListTile(
