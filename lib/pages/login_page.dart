@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+
+  final String email;
+
+  const LoginPage({super.key, required this.email});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +18,7 @@ class LoginPage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Text("Login Page"),
+        child: Text("Login Page $email)"),
       ),
     );
   }

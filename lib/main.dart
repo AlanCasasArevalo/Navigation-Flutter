@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:faker/faker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:navigation/pages/login_page.dart';
@@ -34,15 +35,7 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.add),
-          onPressed: () {
-            // En caso de no tener ninguna vista por encima de nuestra vista, si usamos el metodo maybePop no quedara la pantalla negra
-            Navigator.maybePop(context);
-          },
-        ),
-      ),
+      appBar: AppBar(),
       body: ListView(
         children: [
           ListTile(
@@ -50,7 +43,7 @@ class MenuPage extends StatelessWidget {
             title: Text("Go to Login"),
             onTap: () {
               final route = MaterialPageRoute(
-                builder: (_) => LoginPage()
+                builder: (_) => LoginPage(email: faker.internet.email(),)
               );
               Navigator.push(context, route);
             },
