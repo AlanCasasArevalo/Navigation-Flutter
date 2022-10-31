@@ -4,8 +4,8 @@ import 'package:navigation/pages/menu_page.dart';
 import 'pages/counter_page.dart';
 import 'routes.dart';
 
-Object? getArguments(context) {
-  return ModalRoute.of(context)?.settings.arguments;
+T getArguments<T>(context) {
+  return ModalRoute.of(context)?.settings.arguments as T;
 }
 
 Map<String, Widget Function(BuildContext)> get appRoutes {
@@ -13,7 +13,7 @@ Map<String, Widget Function(BuildContext)> get appRoutes {
     Routes.root: (context) => MenuPage(),
     Routes.counter: (context) => CounterPage(),
     Routes.login: (context) {
-      final email = getArguments(context) as String;
+      final email = getArguments<String>(context);
       return LoginPage(email: email);
     }
   };
