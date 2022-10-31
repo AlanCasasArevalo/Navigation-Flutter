@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/pages/profile_page.dart';
 
 class LoginPage extends StatelessWidget {
-
   final String email;
 
   const LoginPage({super.key, required this.email});
@@ -18,7 +18,16 @@ class LoginPage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Text("Login Page $email)"),
+        child: MaterialButton(
+          onPressed: () {
+            final route = MaterialPageRoute(
+              builder: (_) => ProfilePage(),
+              settings: RouteSettings(name: '/profile')
+            );
+            Navigator.push(context, route);
+          },
+          child: Text("Login Page $email)"),
+        ),
       ),
     );
   }

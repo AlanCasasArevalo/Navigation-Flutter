@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MenuPage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +42,10 @@ class MenuPage extends StatelessWidget {
             title: Text("Go to Login"),
             onTap: () {
               final route = MaterialPageRoute(
-                builder: (_) => LoginPage(email: faker.internet.email(),)
+                builder: (_) => LoginPage(
+                  email: faker.internet.email(),
+                ),
+                settings: RouteSettings(name: "/login"),
               );
               Navigator.push(context, route);
             },
