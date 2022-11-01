@@ -14,7 +14,7 @@ class _SplashPageState extends State<SplashPage> {
     Future.delayed(
       Duration(seconds: 2),
     ).then((value) {
-      Navigator.pushNamed(context, Routes.root);
+      Navigator.pushReplacementNamed(context, Routes.home);
     });
   }
 
