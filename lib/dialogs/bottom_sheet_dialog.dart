@@ -9,8 +9,8 @@ Future<void> showBottomSheetDialog(BuildContext context) {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topRight: Radius.circular(20),
-          topLeft: Radius.circular(20),
+          topRight: Radius.elliptical(20, 10),
+          topLeft: Radius.elliptical(20, 10),
         ),
       ),
       child: SafeArea(
