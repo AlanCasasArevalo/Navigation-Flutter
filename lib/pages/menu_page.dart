@@ -1,5 +1,6 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:navigation/pages/color_picker.dart';
 import '../routes.dart';
 import 'login_page.dart';
 
@@ -32,6 +33,16 @@ class MenuPage extends StatelessWidget {
               title: Text("Go to Counter"),
               onTap: () {
                 Navigator.pushNamed(context, Routes.counter);
+              },
+            ),
+            ListTile(
+              title: Text("Go to Color picker"),
+              onTap: () async {
+                final route = MaterialPageRoute(
+                  builder: (_) => ColorPicker(),
+                );
+                final result = await Navigator.push(context, route);
+                print(result);
               },
             ),
           ],
