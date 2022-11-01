@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/dialogs/confirm_dialog.dart';
 
 class DialogPage extends StatelessWidget {
   @override
@@ -14,7 +15,16 @@ class DialogPage extends StatelessWidget {
                 context: context,
                 builder: (context) => DialogContent(),
               );
-              print("🤦🏻‍♂️");
+            },
+          ),
+          ListTile(
+            title: Text("Show confirm dialog"),
+            onTap: () async {
+              final isOK = await showConfirmDialog(
+                context,
+                title: 'Are you sure',
+              );
+              print("Resultado del dialogo $isOK");
             },
           )
         ],
