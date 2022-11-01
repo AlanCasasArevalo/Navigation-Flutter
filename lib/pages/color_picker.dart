@@ -4,6 +4,7 @@ class ColorPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
         body: ListView.builder(
       itemCount: Colors.primaries.length,
       itemBuilder: (context, index) {
