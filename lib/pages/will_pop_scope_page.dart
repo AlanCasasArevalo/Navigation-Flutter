@@ -13,7 +13,15 @@ class WillPopScopePage extends StatelessWidget {
         return Future.value(false);
       },
       child: Scaffold(
-        appBar: AppBar(),
+        // Ojo si definimos el widget WillPopScope, tenemos que hacer que el boton atras de la barra de navegacion haga su comportamiento esperado
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back),
+          ),
+        ),
         body: Center(
           child: Text('Will Pop Scope Page'),
         ),
