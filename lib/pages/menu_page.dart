@@ -13,15 +13,17 @@ class MenuPage extends StatefulWidget {
 class PageData {
   final String name;
   final String label;
+  final Object? arguments;
 
-  PageData({required this.name, required this.label});
+  PageData({required this.name, required this.label, this.arguments});
 }
 
 class _MenuPageState extends State<MenuPage> {
   Color _color = Colors.red;
 
   final _pages = <PageData>[
-    PageData(name: Routes.login, label: "Go to Login"),
+    PageData(
+        name: Routes.login, label: "Go to Login", arguments: 'test@test.com'),
     PageData(name: Routes.counter, label: "Go to Counter"),
     PageData(name: Routes.color_picker, label: "Go to Color picker"),
   ];
@@ -39,7 +41,11 @@ class _MenuPageState extends State<MenuPage> {
             return ListTile(
               title: Text(page.label),
               onTap: () {
-                Navigator.pushNamed(context, page.name);
+                Navigator.pushNamed(
+                  context,
+                  page.name,
+                  arguments: page.arguments
+                );
               },
             );
           },
