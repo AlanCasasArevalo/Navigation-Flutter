@@ -11,6 +11,8 @@ Future<bool> showConfirmDialog(
     builder: (context) => _DialogContent(
       title: title,
     ),
+    // Si no queremos que el dialogo NO se pueda minimizar, en Android se puede minimizar con el boton atras nativo de android.
+    barrierDismissible: false
   );
   return result ?? false;
 }
