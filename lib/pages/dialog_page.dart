@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/dialogs/bottom_sheet_dialog.dart';
 import 'package:navigation/dialogs/confirm_dialog.dart';
 
 import '../dialogs/cupertino_dialog.dart';
@@ -39,7 +40,14 @@ class DialogPage extends StatelessWidget {
               );
               print("Se ha seleccionado $result");
             },
-          )
+          ),
+          ListTile(
+            title: Text("Show bottom sheet dialog"),
+            onTap: () async {
+              final result = await showBottomSheetDialog(context);
+              print("Se ha seleccionado $result");
+            },
+          ),
         ],
       ),
     );
