@@ -47,15 +47,15 @@ class _MenuPageState extends State<MenuPage> {
             ListTile(
               title: Text("Go to Color picker"),
               onTap: () async {
-                final route = MaterialPageRoute<Color>(
-                  builder: (_) => ColorPicker(),
-                );
-                final result = await Navigator.push(context, route);
+                // final route = MaterialPageRoute<Color>(
+                //   builder: (_) => ColorPicker(),
+                // );
+                // final result = await Navigator.push(context, route);
+                final result = await Navigator.pushNamed(context, Routes.color_picker) as Color?;
                 if (result != null) {
                   _color = result;
                   setState(() {});
                 }
-                print(result);
               },
             ),
           ],
