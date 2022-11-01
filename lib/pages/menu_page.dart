@@ -2,10 +2,17 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:navigation/pages/color_picker.dart';
 import '../routes.dart';
-import 'login_page.dart';
 
-class MenuPage extends StatelessWidget {
+class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
+
+  @override
+  State<MenuPage> createState() => _MenuPageState();
+}
+
+class _MenuPageState extends State<MenuPage> {
+
+  Color _color = Colors.red;
 
   void _onTap(BuildContext context) {
     final faker = Faker();
@@ -20,6 +27,9 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: _color,
+      ),
       body: SafeArea(
         child: ListView(
           children: [
