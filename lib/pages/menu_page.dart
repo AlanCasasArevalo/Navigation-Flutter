@@ -38,7 +38,7 @@ class _MenuPageState extends State<MenuPage> {
           name: Routes.color_picker,
           label: "Go to Color picker",
           onResult: (result) {
-            if (result != null && result is Color) {
+            if (result is Color) {
               _color = result;
               setState(() {});
             }
