@@ -5,14 +5,15 @@ Future<bool> showWillPopScopeConfirmDialog(
   String title = '',
 }) async {
   final result = await showDialog<bool>(
-    // Color de fondo del dialogo
-    barrierColor: Colors.white.withOpacity(.7),
-    context: context,
-    builder: (context) => _DialogContent(
-      title: title,
-    ),
-    // Si no queremos que el dialogo NO se pueda minimizar, en Android se puede minimizar con el boton atras nativo de android.
-    barrierDismissible: false
+      // Color de fondo del dialogo
+      barrierColor: Colors.white.withOpacity(.7),
+      context: context,
+      builder: (context) => _DialogContent(
+            title: title,
+          ),
+      // Si no queremos que el dialogo NO se pueda minimizar, en Android se puede minimizar con el boton atras nativo de android.
+      // el parametro barrierDismissible aqui no tiene sentido debido a que el onWillPop esta bloqueando el comportamiento de dismiss de otros widgets
+      // barrierDismissible: false,
   );
   return result ?? false;
 }
@@ -30,7 +31,7 @@ class _DialogContent extends StatelessWidget {
       },
       child: AlertDialog(
         // Redondeo de los bordes, si no le pasamos borderRadius se quedaria rectangular completamente
-      shape: RoundedRectangleBorder(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
         // Color del dialogo
