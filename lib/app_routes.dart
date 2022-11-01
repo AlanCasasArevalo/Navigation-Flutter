@@ -4,6 +4,7 @@ import 'package:navigation/pages/dialog_page.dart';
 import 'package:navigation/pages/login_page.dart';
 import 'package:navigation/pages/menu_page.dart';
 import 'package:navigation/pages/splash_page.dart';
+import 'package:navigation/pages/will_pop_scope_page.dart';
 import 'pages/counter_page.dart';
 import 'routes.dart';
 
@@ -22,5 +23,6 @@ Map<String, Widget Function(BuildContext)> get appRoutes {
     },
     Routes.color_picker: (context) => ColorPicker(),
     Routes.dialog: (context) => DialogPage(),
+    Routes.will_pop_scope: (context) => WillPopScopePage(),
   };
 }

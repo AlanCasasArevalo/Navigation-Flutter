@@ -7,4 +7,5 @@ class Routes {
   static const login = '/login';
   static const color_picker = '/color_picker';
   static const dialog = '/dialog';
+  static const will_pop_scope = '/will_pop_scope';
 }
