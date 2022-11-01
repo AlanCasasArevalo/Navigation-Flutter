@@ -58,7 +58,7 @@ class DialogPage extends StatelessWidget {
           ListTile(
             title: Text("Show will pop confirm dialog"),
             onTap: () async {
-              await showWillPopScopeConfirmDialog(context, title: "Sure???");
+              await showWillPopScopeConfirmDialog(context, title: "Sure???", dismissible: false);
             },
           ),
         ],
