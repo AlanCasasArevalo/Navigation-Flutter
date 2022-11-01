@@ -11,7 +11,6 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-
   Color _color = Colors.red;
 
   void _onTap(BuildContext context) {
@@ -52,6 +51,10 @@ class _MenuPageState extends State<MenuPage> {
                   builder: (_) => ColorPicker(),
                 );
                 final result = await Navigator.push(context, route);
+                if (result != null) {
+                  _color = result;
+                  setState(() {});
+                }
                 print(result);
               },
             ),
