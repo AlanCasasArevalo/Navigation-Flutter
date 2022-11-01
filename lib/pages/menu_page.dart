@@ -1,6 +1,4 @@
-import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:navigation/pages/color_picker.dart';
 import '../routes.dart';
 
 class MenuPage extends StatefulWidget {
