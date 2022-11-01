@@ -8,9 +8,9 @@ class WillPopScopePage extends StatelessWidget {
     // y un TRUE en caso de que si queramos permitir el retroceso con el boton nativo
     return WillPopScope(
       // Cuando se
-      onWillPop: () {
+      onWillPop: () async {
         print("🤦🏻‍♂️");
-        return Future.value(false);
+        return false;
       },
       child: Scaffold(
         // Ojo si definimos el widget WillPopScope, tenemos que hacer que el boton atras de la barra de navegacion
