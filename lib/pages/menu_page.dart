@@ -14,16 +14,6 @@ class MenuPage extends StatelessWidget {
       Routes.login,
       arguments: email,
     );
-    /*
-    // Haciendo este cambio, se pasa el parametro email y aunque hagamos un hot reload no se cambia el email en la pantalla
-    final route = MaterialPageRoute(
-      builder: (_) {
-        print("🤦🏻‍♂️");
-        return LoginPage(email: email);
-      },
-    );
-    Navigator.push(context, route);
-     */
   }
 
   @override
