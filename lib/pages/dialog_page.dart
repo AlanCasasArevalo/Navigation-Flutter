@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:navigation/dialogs/bottom_sheet_dialog.dart';
 import 'package:navigation/dialogs/confirm_dialog.dart';
 import 'package:navigation/dialogs/custom_dialog.dart';
+import 'package:navigation/dialogs/will_pop_confirm_dialog.dart';
 
 import '../dialogs/cupertino_dialog.dart';
 
@@ -52,6 +53,12 @@ class DialogPage extends StatelessWidget {
             title: Text("Show custom dialog"),
             onTap: () async {
               await showCustomDialog(context);
+            },
+          ),
+          ListTile(
+            title: Text("Show will pop confirm dialog"),
+            onTap: () async {
+              await showWillPopScopeConfirmDialog(context, title: "Sure???");
             },
           ),
         ],
