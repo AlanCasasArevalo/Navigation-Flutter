@@ -13,7 +13,8 @@ class WillPopScopePage extends StatelessWidget {
         return Future.value(false);
       },
       child: Scaffold(
-        // Ojo si definimos el widget WillPopScope, tenemos que hacer que el boton atras de la barra de navegacion haga su comportamiento esperado
+        // Ojo si definimos el widget WillPopScope, tenemos que hacer que el boton atras de la barra de navegacion
+        // haga su comportamiento esperado, OJO el maybePop es capturada por la misma accion de onWillPop
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
