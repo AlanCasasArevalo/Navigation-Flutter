@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/routes.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -16,11 +17,12 @@ class ProfilePage extends StatelessWidget {
       body: Center(
         child: MaterialButton(
           onPressed: () {
-            Navigator.popUntil(context, (route) {
-              final name = route.settings.name;
-              print("❌ ${route.settings.name}");
-              return name == "/";
-            });
+            // Navigator.popUntil(context, (route) {
+            //   final name = route.settings.name;
+            //   print("❌ ${route.settings.name}");
+            //   return name == Routes.initialRoute;
+            // });
+            Navigator.pushNamed(context, Routes.initialRoute);
           },
           child: Text("LOG OUT"),
         ),
