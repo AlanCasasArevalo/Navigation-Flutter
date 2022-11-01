@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/pages/color_picker.dart';
+import 'package:navigation/pages/dialog_page.dart';
 import 'package:navigation/pages/login_page.dart';
 import 'package:navigation/pages/menu_page.dart';
 import 'package:navigation/pages/splash_page.dart';
@@ -20,5 +21,6 @@ Map<String, Widget Function(BuildContext)> get appRoutes {
       return LoginPage(email: email);
     },
     Routes.color_picker: (context) => ColorPicker(),
+    Routes.dialog: (context) => DialogPage(),
   };
 }

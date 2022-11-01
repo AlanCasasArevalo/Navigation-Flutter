@@ -6,4 +6,5 @@ class Routes {
   static const counter = '/counter';
   static const login = '/login';
   static const color_picker = '/color_picker';
+  static const dialog = '/dialog';
 }
