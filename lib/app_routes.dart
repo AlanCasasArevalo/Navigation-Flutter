@@ -12,7 +12,7 @@ T getArguments<T>(context) {
 Map<String, Widget Function(BuildContext)> get appRoutes {
   return {
     Routes.splash: (context) => SplashPage(),
-    Routes.root: (context) => MenuPage(),
+    Routes.home: (context) => MenuPage(),
     Routes.counter: (context) => CounterPage(),
     Routes.login: (context) {
       final email = getArguments<String>(context);

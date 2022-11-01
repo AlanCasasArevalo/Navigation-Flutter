@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       // Si usamos nombres de rutas y definimos correctamente home '/' no hace falta poner home en la app principal
       //home: MenuPage(),
       routes: appRoutes,
-      initialRoute: Routes.splash,
+      initialRoute: Routes.initialRoute,
     );
   }
 }
