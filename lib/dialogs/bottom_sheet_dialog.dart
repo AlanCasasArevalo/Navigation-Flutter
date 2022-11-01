@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-showBottomSheetDialog(BuildContext context) {
-  showModalBottomSheet(
+Future<void> showBottomSheetDialog(BuildContext context) {
+  return showModalBottomSheet(
     context: context,
     // Envolviendo el contenido en un safe area hacemos que no se queden pegados los botones
     builder: (context) => SafeArea(
@@ -10,17 +10,23 @@ showBottomSheetDialog(BuildContext context) {
         mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
             leading: Icon(Icons.photo),
             title: Text("Photos"),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
             leading: Icon(Icons.south_rounded),
             title: Text("Music"),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
             leading: Icon(Icons.video_camera_back_rounded),
             title: Text("Video"),
           ),

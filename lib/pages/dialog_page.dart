@@ -44,8 +44,7 @@ class DialogPage extends StatelessWidget {
           ListTile(
             title: Text("Show bottom sheet dialog"),
             onTap: () async {
-              final result = await showBottomSheetDialog(context);
-              print("Se ha seleccionado $result");
+              await showBottomSheetDialog(context);
             },
           ),
         ],
