@@ -17,7 +17,12 @@ class ProfilePage extends StatelessWidget {
       body: Center(
         child: MaterialButton(
           onPressed: () {
-            Navigator.pushNamed(context, Routes.initialRoute);
+            // Se navega a la ruta que le indicamos y elimina el resto de pantallas en el stack
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              Routes.initialRoute,
+              (route) => false,
+            );
           },
           child: Text("LOG OUT"),
         ),
