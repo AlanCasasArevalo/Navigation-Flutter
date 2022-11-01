@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 showBottomSheetDialog(BuildContext context) {
   showModalBottomSheet(
     context: context,
-    // Si hay bastantes elementos seria conveniente habilitar este parametro el scroll, pero si hay excesivos elementos
-    // se va a seguir teniendo un error de renderizacion
-    // isScrollControlled: true,
-    builder: (context) => Container(
+    // Envolviendo el contenido en un safe area hacemos que no se queden pegados los botones
+    builder: (context) => SafeArea(
       child: Column(
+        // Se hace que los elementos ocupen lo minimo posible
+        mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
             onTap: () {},
@@ -23,43 +23,6 @@ showBottomSheetDialog(BuildContext context) {
             onTap: () {},
             leading: Icon(Icons.video_camera_back_rounded),
             title: Text("Video"),
-          ),        ListTile(
-            onTap: () {},
-            leading: Icon(Icons.photo),
-            title: Text("Photos"),
-          ),
-          ListTile(
-            onTap: () {},
-            leading: Icon(Icons.south_rounded),
-            title: Text("Music"),
-          ),
-          ListTile(
-            onTap: () {},
-            leading: Icon(Icons.video_camera_back_rounded),
-            title: Text("Video"),
-          ),        ListTile(
-            onTap: () {},
-            leading: Icon(Icons.photo),
-            title: Text("Photos"),
-          ),
-          ListTile(
-            onTap: () {},
-            leading: Icon(Icons.south_rounded),
-            title: Text("Music"),
-          ),
-          ListTile(
-            onTap: () {},
-            leading: Icon(Icons.video_camera_back_rounded),
-            title: Text("Video"),
-          ),        ListTile(
-            onTap: () {},
-            leading: Icon(Icons.photo),
-            title: Text("Photos"),
-          ),
-          ListTile(
-            onTap: () {},
-            leading: Icon(Icons.south_rounded),
-            title: Text("Music"),
           ),
         ],
       ),
