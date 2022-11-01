@@ -26,6 +26,7 @@ class _MenuPageState extends State<MenuPage> {
         name: Routes.login, label: "Go to Login", arguments: 'test@test.com'),
     PageData(name: Routes.counter, label: "Go to Counter"),
     PageData(name: Routes.color_picker, label: "Go to Color picker"),
+    PageData(name: Routes.dialog, label: "Go to Color Dialog"),
   ];
 
   @override
