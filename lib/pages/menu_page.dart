@@ -26,16 +26,6 @@ class _MenuPageState extends State<MenuPage> {
     PageData(name: Routes.color_picker, label: "Go to Color picker"),
   ];
 
-  void _onTap(BuildContext context) {
-    final faker = Faker();
-    final email = faker.internet.email();
-    Navigator.pushNamed(
-      context,
-      Routes.login,
-      arguments: email,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
