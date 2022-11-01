@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/dialogs/bottom_sheet_dialog.dart';
 import 'package:navigation/dialogs/confirm_dialog.dart';
+import 'package:navigation/dialogs/custom_dialog.dart';
 
 import '../dialogs/cupertino_dialog.dart';
 
@@ -45,6 +46,12 @@ class DialogPage extends StatelessWidget {
             title: Text("Show bottom sheet dialog"),
             onTap: () async {
               await showBottomSheetDialog(context);
+            },
+          ),
+          ListTile(
+            title: Text("Show custom dialog"),
+            onTap: () async {
+              await showCustomDialog(context);
             },
           ),
         ],
