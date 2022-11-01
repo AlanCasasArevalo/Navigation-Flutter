@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/dialogs/confirm_dialog.dart';
 
+import '../dialogs/cupertino_dialog.dart';
+
 class DialogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,17 @@ class DialogPage extends StatelessWidget {
                 title: 'Are you sure',
               );
               print("Resultado del dialogo $isOK");
+            },
+          ),
+          ListTile(
+            title: Text("Show cupertino dialog"),
+            onTap: () async {
+              final result = await showDialogWitCupertinoStyle(
+                context,
+                title: 'Are you sure',
+                content: 'Hasta luego maricarme'
+              );
+              print("Se ha seleccionado $result");
             },
           )
         ],
