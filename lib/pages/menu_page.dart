@@ -10,8 +10,21 @@ class MenuPage extends StatefulWidget {
   State<MenuPage> createState() => _MenuPageState();
 }
 
+class PageData {
+  final String name;
+  final String label;
+
+  PageData({required this.name, required this.label});
+}
+
 class _MenuPageState extends State<MenuPage> {
   Color _color = Colors.red;
+
+  final _pages = <PageData>[
+    PageData(name: Routes.login, label: "Go to Login"),
+    PageData(name: Routes.counter, label: "Go to Counter"),
+    PageData(name: Routes.color_picker, label: "Go to Color picker"),
+  ];
 
   void _onTap(BuildContext context) {
     final faker = Faker();
@@ -30,35 +43,17 @@ class _MenuPageState extends State<MenuPage> {
         backgroundColor: _color,
       ),
       body: SafeArea(
-        child: ListView(
-          children: [
-            ListTile(
-              title: Text("Go to Login"),
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            final page = _pages[index];
+            return ListTile(
+              title: Text(page.label),
               onTap: () {
-                _onTap(context);
+                Navigator.pushNamed(context, page.name);
               },
-            ),
-            ListTile(
-              title: Text("Go to Counter"),
-              onTap: () {
-                Navigator.pushNamed(context, Routes.counter);
-              },
-            ),
-            ListTile(
-              title: Text("Go to Color picker"),
-              onTap: () async {
-                // final route = MaterialPageRoute<Color>(
-                //   builder: (_) => ColorPicker(),
-                // );
-                // final result = await Navigator.push(context, route);
-                final result = await Navigator.pushNamed(context, Routes.color_picker) as Color?;
-                if (result != null) {
-                  _color = result;
-                  setState(() {});
-                }
-              },
-            ),
-          ],
+            );
+          },
+          itemCount: _pages.length,
         ),
       ),
     );
